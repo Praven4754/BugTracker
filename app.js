@@ -1,9 +1,20 @@
 class Bug {
-    constructor(id, title, description, status = 'open') {
+    constructor(id, title, description, status = 'open', priority = 'medium', createdAt = new Date()) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.status = status;
+        this.priority = priority;
+        this.createdAt = createdAt;
+        this.comments = [];
+    }
+
+    addComment(comment) {
+        this.comments.push({ text: comment, date: new Date() });
+    }
+
+    setPriority(priority) {
+        this.priority = priority;
     }
 }
 
