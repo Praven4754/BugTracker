@@ -1,0 +1,39 @@
+body {
+    font-size: 14px;
+}
+
+.header {
+    padding: 12px;
+    font-size: 1.3rem;
+}
+
+.container {
+    max-width: 600px;
+    padding: 18px;
+    margin: 24px auto;
+}
+
+.bug-item {
+    padding: 10px 0;
+}
+
+.bug-status {
+    padding: 2px 8px;
+    font-size: 0.8rem;
+}
+
+.add-bug-form {
+    margin-top: 18px;
+    gap: 8px;
+}
+
+.add-bug-form input,
+.add-bug-form select {
+    padding: 6px;
+    font-size: 0.95rem;
+}
+
+.add-bug-form button {
+    padding: 6px 12px;
+    font-size: 0.95rem;
+}
