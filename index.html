@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Bug Tracker</title>
+</head>
+<body>
+    <div>
+        <h1>Bug Tracker</h1>
+        <form id="bugForm">
+            <input type="text" id="title" placeholder="Bug title" required>
+            <select id="status">
+                <option value="Open">Open</option>
+                <option value="Closed">Closed</option>
+            </select>
+            <button type="submit">Add Bug</button>
+        </form>
+        <table>
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="bugList">
+                <!-- Bugs will appear here -->
+            </tbody>
+        </table>
+    </div>
+    <script>
+        const bugForm = document.getElementById('bugForm');
+        const bugList = document.getElementById('bugList');
+
+        bugForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const title = document.getElementById('title').value.trim();
+            const status = document.getElementById('status').value;
+            if (title) {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${title}</td>
+                    <td>${status}</td>
+                `;
+                bugList.appendChild(row);
+                bugForm.reset();
+            }
+        });
+    </script>
+</body>
+</html>
